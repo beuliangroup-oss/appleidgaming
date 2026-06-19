@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Apple ID Gaming</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<img src="images/logo.png">
+<span>APPLE ID<br>GAMING</span>
+</div>
+
+<nav id="menu">
+
+<a href="#">Home</a>
+<a href="#game">Top Up</a>
+<a href="#promo">Promo</a>
+<a href="#testimoni">Testimoni</a>
+<a href="#kontak">Kontak</a>
+
+<a href="login.html" class="login-btn">
+Masuk
+</a>
+
+</nav>
+
+<div class="hamburger" id="hamburger">
+☰
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<img src="images/logo.png" class="hero-logo">
+
+<h1>
+TOP UP GAME<br>
+FAVORITMU
+</h1>
+
+<p>
+Top Up Diamond, UC, Voucher dan Membership
+dengan proses instan 24 jam.
+</p>
+
+<div class="hero-btn">
+
+<button onclick="location.href='#game'">
+TOP UP SEKARANG
+</button>
+
+<button class="secondary">
+CEK PESANAN
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="game" class="game-section">
+
+<h2>GAME POPULER</h2>
+
+<div class="game-grid">
+
+<div class="game-card">
+<img src="images/mlbb.jpg">
+</div>
+
+<div class="game-card">
+<img src="images/ff.jpg">
+</div>
+
+<div class="game-card">
+<img src="images/pubg.jpg">
+</div>
+
+<div class="game-card">
+<img src="images/hok.jpg">
+</div>
+
+<div class="game-card">
+<img src="images/valorant.jpg">
+</div>
+
+<div class="game-card">
+<img src="images/genshin.jpg">
+</div>
+
+<div class="game-card">
+<img src="images/codm.jpg">
+</div>
+
+<div class="game-card">
+<img src="images/arena.jpg">
+</div>
+
+</div>
+
+</section>
+
+<section class="topup-box">
+
+<h2>TOP UP SEKARANG</h2>
+
+<form>
+
+<input type="text" placeholder="Masukkan User ID">
+
+<input type="text" placeholder="Masukkan Zone ID">
+
+<select>
+<option>Pilih Nominal</option>
+<option>86 Diamond</option>
+<option>172 Diamond</option>
+<option>257 Diamond</option>
+</select>
+
+<select>
+<option>Pilih Pembayaran</option>
+<option>DANA</option>
+<option>OVO</option>
+<option>QRIS</option>
+<option>Gopay</option>
+</select>
+
+<button type="submit">
+BELI SEKARANG
+</button>
+
+</form>
+
+</section>
+
+<section class="features">
+
+<div class="feature">
+⚡
+<h3>PROSES INSTAN</h3>
+<p>Pesanan diproses otomatis</p>
+</div>
+
+<div class="feature">
+🛡
+<h3>AMAN</h3>
+<p>Data terlindungi</p>
+</div>
+
+<div class="feature">
+💎
+<h3>HARGA TERBAIK</h3>
+<p>Lebih murah dari pasaran</p>
+</div>
+
+<div class="feature">
+🎧
+<h3>SUPPORT 24 JAM</h3>
+<p>Admin siap membantu</p>
+</div>
+
+</section>
+
+<footer>
+
+<h2>APPLE ID GAMING</h2>
+
+<p>
+Top Up Game Premium • Aman • Cepat • Terpercaya
+</p>
+
+</footer>
+
+<script>
+
+const hamburger =
+document.getElementById("hamburger");
+
+const menu =
+document.getElementById("menu");
+
+hamburger.onclick = () =>{
+menu.classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>
