@@ -1,6 +1,6 @@
 /* =========================
    APPLE ID GAMING
-   STYLE.CSS FINAL
+   BASE STYLE
 ========================= */
 
 :root{
@@ -9,35 +9,80 @@
     --dark:#050010;
     --card:#120020;
     --white:#ffffff;
+
+    --container:1400px;
+    --header-height:80px;
 }
 
-/* RESET */
+/* =========================
+   RESET
+========================= */
 
-*{
+*,
+*::before,
+*::after{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Orbitron',sans-serif;
 }
 
 html{
     scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
 }
 
 body{
+    min-height:100vh;
+
+    font-family:'Orbitron',sans-serif;
     color:var(--white);
+
     overflow-x:hidden;
 
     background:
-    linear-gradient(
-        rgba(5,0,15,.85),
-        rgba(5,0,15,.95)
-    ),
-    url("../images/bg-galaxy.png");
+        linear-gradient(
+            rgba(5,0,15,.85),
+            rgba(5,0,15,.95)
+        ),
+        url("../images/bg-galaxy.png");
 
     background-size:cover;
     background-position:center;
+    background-repeat:no-repeat;
     background-attachment:fixed;
+
+    line-height:1.6;
+}
+
+/* =========================
+   MEDIA DEFAULT
+========================= */
+
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    width:min(100% - 32px, var(--container));
+    margin-inline:auto;
 }
 
 /* HEADER */
