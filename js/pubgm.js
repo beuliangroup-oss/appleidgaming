@@ -1,12 +1,16 @@
 const hamburger =
-document.getElementById("hamburger");
+document.addEventListener("DOMContentLoaded", () => {
 
-const menu =
-document.getElementById("menu");
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
 
-hamburger.onclick = () => {
-menu.classList.toggle("active");
-};
+    if (hamburger && menu) {
+        hamburger.addEventListener("click", () => {
+            menu.classList.toggle("active");
+        });
+    }
+
+});
 
 const paymentBtn =
 document.getElementById("paymentBtn");
