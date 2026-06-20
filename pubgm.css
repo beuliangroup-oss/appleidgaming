@@ -1,265 +1,437 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Orbitron',sans-serif;
+/* =========================
+   GLOBAL
+========================= */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-color:#fff;
-background:
-linear-gradient(rgba(5,0,15,.85),rgba(5,0,15,.9)),
-url("images/bg-galaxy.png");
+    font-family:'Orbitron',sans-serif;
+    color:#fff;
+    overflow-x:hidden;
+    min-height:100vh;
 
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-overflow-x:hidden;
+    background:
+    linear-gradient(
+        rgba(5,0,15,.85),
+        rgba(5,0,15,.92)
+    ),
+    url("images/bg-galaxy.png");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 5%;
-background:rgba(10,0,25,.9);
-backdrop-filter:blur(10px);
-border-bottom:1px solid #c800ff;
-position:sticky;
-top:0;
-z-index:999;
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:15px 5%;
+
+    background:rgba(10,0,25,.85);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid #c800ff;
 }
 
 .logo{
-display:flex;
-align-items:center;
-gap:10px;
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
 .logo img{
-width:50px;
+    width:50px;
+    height:50px;
+    object-fit:contain;
+}
+
+.logo h2{
+    font-size:20px;
 }
 
 nav{
-display:flex;
-gap:25px;
+    display:flex;
+    align-items:center;
+    gap:25px;
 }
 
 nav a{
-color:#fff;
-text-decoration:none;
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff4dff;
 }
 
 .hamburger{
-display:none;
-font-size:30px;
-cursor:pointer;
+    display:none;
+    font-size:30px;
+    cursor:pointer;
 }
 
+/* =========================
+   HERO
+========================= */
+
 .hero{
-height:350px;
-position:relative;
-background:
-url("images/pubg-banner.jpg");
-background-size:cover;
-background-position:center;
+    position:relative;
+    height:350px;
+
+    background:url("images/pubg-banner.jpg");
+    background-size:cover;
+    background-position:center;
 }
 
 .hero-overlay{
-position:absolute;
-inset:0;
-background:
-linear-gradient(rgba(5,0,15,.2),rgba(5,0,15,.85));
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(5,0,15,.2),
+        rgba(5,0,15,.9)
+    );
 }
 
 .hero-content{
-position:relative;
-z-index:2;
-padding:50px 5%;
-height:100%;
-display:flex;
-align-items:end;
+    position:relative;
+    z-index:2;
+
+    height:100%;
+
+    display:flex;
+    align-items:flex-end;
+
+    padding:50px 5%;
 }
 
 .game-info{
-display:flex;
-align-items:center;
-gap:20px;
+    display:flex;
+    align-items:center;
+    gap:20px;
 }
 
 .game-logo{
-width:90px;
-border-radius:15px;
+    width:90px;
+    border-radius:15px;
+
+    box-shadow:
+    0 0 20px rgba(200,0,255,.4);
 }
 
 .game-info h1{
-font-size:42px;
-text-shadow:0 0 20px #ff00ff;
+    font-size:42px;
+    text-shadow:0 0 20px #ff00ff;
 }
 
 .tags{
-display:flex;
-gap:10px;
-margin-top:10px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:12px;
 }
 
 .tags span{
-background:#1c1035;
-padding:8px 15px;
-border-radius:10px;
+    background:#1c1035;
+    border:1px solid #c800ff;
+
+    padding:8px 15px;
+    border-radius:10px;
 }
+
+/* =========================
+   FILTER
+========================= */
 
 .filter-area{
-padding:30px 5%;
-}
-
-.filter-btn{
-width:100%;
-max-width:350px;
-padding:15px;
-background:#140022;
-color:#fff;
-border:1px solid #c800ff;
-border-radius:12px;
-cursor:pointer;
+    padding:30px 5%;
 }
 
 .dropdown{
-position:relative;
+    position:relative;
 }
 
+.filter-btn{
+    width:100%;
+    max-width:350px;
+
+    padding:15px;
+
+    background:#140022;
+    color:#fff;
+
+    border:1px solid #c800ff;
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.filter-btn:hover{
+    background:#1c0033;
+}
+
+/* =========================
+   PAYMENT POPUP
+========================= */
+
 .payment-popup{
-display:none;
-position:absolute;
-top:70px;
-left:0;
-width:100%;
-max-width:700px;
-background:#120020;
-padding:20px;
-border-radius:20px;
-border:1px solid #c800ff;
+    display:none;
 
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:15px;
+    position:absolute;
+    top:70px;
+    left:0;
 
-z-index:99;
+    width:100%;
+    max-width:700px;
+
+    padding:20px;
+
+    background:rgba(18,0,32,.95);
+    backdrop-filter:blur(10px);
+
+    border:1px solid #c800ff;
+    border-radius:20px;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(140px,1fr));
+
+    gap:15px;
+
+    z-index:999;
 }
 
 .payment-popup.show{
-display:grid;
+    display:grid;
 }
 
 .payment-item{
-background:#1d1236;
-padding:15px;
-text-align:center;
-border-radius:10px;
-cursor:pointer;
-transition:.3s;
+    background:#1d1236;
+
+    padding:15px;
+    text-align:center;
+
+    border-radius:12px;
+
+    cursor:pointer;
+    transition:.3s;
 }
 
 .payment-item:hover{
-background:#c800ff;
+    background:#c800ff;
+    transform:translateY(-3px);
 }
 
+.payment-popup::-webkit-scrollbar{
+    width:6px;
+}
+
+.payment-popup::-webkit-scrollbar-thumb{
+    background:#c800ff;
+    border-radius:20px;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
 .product-grid{
-padding:20px 5% 60px;
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+    padding:20px 5% 60px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
 }
 
 .card{
-background:#120020;
-padding:25px;
-border-radius:20px;
-border:1px solid #c800ff;
-text-align:center;
-transition:.3s;
+    background:rgba(18,0,32,.95);
+
+    border:1px solid #c800ff;
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 25px #c800ff;
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 25px rgba(200,0,255,.7);
 }
 
 .badge{
-display:inline-block;
-background:#32c957;
-padding:6px 12px;
-border-radius:8px;
-margin-bottom:15px;
+    display:inline-block;
+
+    background:#32c957;
+
+    padding:6px 12px;
+    border-radius:8px;
+
+    margin-bottom:15px;
+
+    font-size:13px;
 }
 
 .card h3{
-font-size:28px;
-margin-bottom:15px;
+    font-size:28px;
+    margin-bottom:15px;
 }
 
 .card p{
-font-size:24px;
-color:#ffd66b;
-margin-bottom:20px;
+    font-size:24px;
+    color:#ffd66b;
+    margin-bottom:20px;
 }
 
 .card button{
-width:100%;
-padding:15px;
-border:none;
-background:#c800ff;
-color:#fff;
-font-weight:bold;
-border-radius:12px;
-cursor:pointer;
+    width:100%;
+    padding:15px;
+
+    border:none;
+    border-radius:12px;
+
+    background:#c800ff;
+    color:#fff;
+
+    font-weight:700;
+
+    cursor:pointer;
+    transition:.3s;
 }
 
-footer{
-padding:40px;
-text-align:center;
-border-top:1px solid #c800ff;
+.card button:hover{
+    background:#de33ff;
 }
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:40px 20px;
+    text-align:center;
+
+    border-top:1px solid #c800ff;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:768px){
 
-.hamburger{
-display:block;
+    .hamburger{
+        display:block;
+    }
+
+    nav{
+        display:none;
+
+        position:absolute;
+        top:80px;
+        left:0;
+
+        width:100%;
+
+        background:#120020;
+
+        flex-direction:column;
+        gap:20px;
+
+        padding:20px;
+
+        border-top:1px solid #c800ff;
+    }
+
+    nav.active{
+        display:flex;
+    }
+
+    .hero{
+        height:280px;
+    }
+
+    .game-info{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .game-info h1{
+        font-size:28px;
+    }
+
+    .game-logo{
+        width:80px;
+    }
+
+    .payment-popup{
+        position:fixed;
+
+        left:0;
+        right:0;
+        top:50%;
+
+        transform:translateY(-50%);
+
+        width:95%;
+        max-height:70vh;
+
+        overflow-y:auto;
+
+        margin:auto;
+    }
+
+    .card h3{
+        font-size:22px;
+    }
+
+    .card p{
+        font-size:20px;
+    }
 }
 
-nav{
-display:none;
-position:absolute;
-top:80px;
-left:0;
-width:100%;
-background:#120020;
-flex-direction:column;
-padding:20px;
-}
+/* =========================
+   TABLET
+========================= */
 
-nav.active{
-display:flex;
-}
+@media(min-width:769px) and (max-width:1024px){
 
-.game-info{
-flex-direction:column;
-text-align:center;
-}
+    .product-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
 
-.game-info h1{
-font-size:30px;
-}
-
-.payment-popup{
-position:fixed;
-left:0;
-right:0;
-top:50%;
-transform:translateY(-50%);
-width:95%;
-margin:auto;
-max-height:70vh;
-overflow:auto;
-}
+    .game-info h1{
+        font-size:36px;
+    }
 }
