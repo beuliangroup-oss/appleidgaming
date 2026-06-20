@@ -99,9 +99,12 @@ nav a:hover{
     position:relative;
     height:350px;
 
-    background:url("images/pubg-banner.jpg");
+    .hero{
+    background:
+    url("../images/pubg-banner.jpg");
     background-size:cover;
     background-position:center;
+}
 }
 
 .hero-overlay{
