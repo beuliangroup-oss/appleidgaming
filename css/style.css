@@ -111,10 +111,6 @@ header{
     display:flex;
     align-items:center;
     gap:12px;
-
-    text-decoration:none;
-
-    min-width:0;
 }
 
 .logo img{
@@ -125,16 +121,12 @@ header{
 }
 
 .logo span{
-    display:block;
-
     font-size:18px;
     font-weight:700;
-
     line-height:1.1;
-    letter-spacing:1px;
-
     white-space:nowrap;
 }
+
 
 nav{
     display:flex;
@@ -226,13 +218,9 @@ nav a:hover{
 }
 
 .hero-logo{
-    width:220px;
-
-    margin-bottom:20px;
-
-    filter:
-    drop-shadow(0 0 10px #ff00ff)
-    drop-shadow(0 0 30px #ff00ff);
+    width:clamp(120px, 15vw, 220px);
+    height:auto;
+    margin-inline:auto;
 }
 
 .hero h1{
@@ -383,6 +371,7 @@ nav a:hover{
 
 .game-card{
     overflow:hidden;
+    border-radius:15px;
 }
 
 .game-card img{
@@ -390,8 +379,8 @@ nav a:hover{
     aspect-ratio:1/1;
     object-fit:cover;
     display:block;
-    border-radius:10px;
 }
+
 /* TOPUP */
 
 .topup-box{
