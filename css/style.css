@@ -51,7 +51,10 @@ header{
     justify-content:space-between;
     align-items:center;
 
-    padding:15px 5%;
+    min-height:80px;
+
+    padding:12px 5%;
+}
 
     background:rgba(15,0,35,.95);
     backdrop-filter:blur(10px);
@@ -62,17 +65,30 @@ header{
 .logo{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:12px;
+
+    text-decoration:none;
+
+    min-width:0;
 }
 
 .logo img{
-    width:55px;
+    width:60px;
+    height:60px;
+    object-fit:contain;
+    flex-shrink:0;
 }
 
 .logo span{
+    display:block;
+
     font-size:18px;
     font-weight:700;
-    line-height:1.2;
+
+    line-height:1.1;
+    letter-spacing:1px;
+
+    white-space:nowrap;
 }
 
 nav{
@@ -320,20 +336,16 @@ nav a:hover{
     0 0 20px rgba(200,0,255,.8);
 }
 
-.game-card img{
-    width:100%;
-    display:block;
-    border-radius:10px;
-}
 .game-card{
-    display:block;
-    text-decoration:none;
-    color:inherit;
+    overflow:hidden;
 }
 
 .game-card img{
-    display:block;
     width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    display:block;
+    border-radius:10px;
 }
 /* TOPUP */
 
@@ -515,18 +527,55 @@ footer h2{
 
     cursor:pointer;
 }
+/* TABLET */
+
+@media (max-width:1024px){
+
+    .logo img{
+        width:55px;
+        height:55px;
+    }
+
+    .logo span{
+        font-size:16px;
+    }
+
+    nav{
+        gap:20px;
+    }
+}
 
 /* MOBILE */
 
-@media(max-width:768px){
+@media (max-width:768px){
+
+    header{
+        min-height:70px;
+        padding:10px 15px;
+    }
+
+    .logo{
+        gap:8px;
+    }
+
+    .logo img{
+        width:45px;
+        height:45px;
+    }
+
+    .logo span{
+        font-size:13px;
+        line-height:1.1;
+    }
 
     .hamburger{
         display:block;
+        font-size:28px;
     }
 
     nav{
         position:absolute;
-        top:80px;
+        top:70px;
         left:0;
 
         width:100%;
@@ -535,27 +584,59 @@ footer h2{
 
         flex-direction:column;
 
+        gap:18px;
+
         padding:25px;
 
         display:none;
+
+        border-top:1px solid var(--primary);
     }
 
     nav.active{
         display:flex;
     }
 
+    .hero{
+        min-height:90vh;
+    }
+
     .hero-logo{
-        width:150px;
+        width:120px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:14px;
+        line-height:1.6;
     }
 
     .planet{
-        opacity:.6;
+        opacity:.4;
     }
 
     .planet1,
     .planet2,
     .planet3,
     .planet4{
-        transform:scale(.8);
+        transform:scale(.6);
+    }
+}
+@media (min-width:1400px){
+
+    .logo img{
+        width:70px;
+        height:70px;
+    }
+
+    .logo span{
+        font-size:22px;
+    }
+
+    .hero-logo{
+        width:260px;
     }
 }
