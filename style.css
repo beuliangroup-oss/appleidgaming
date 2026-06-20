@@ -326,7 +326,16 @@ nav a:hover{
     display:block;
     border-radius:10px;
 }
+.game-card{
+    display:block;
+    text-decoration:none;
+    color:inherit;
+}
 
+.game-card img{
+    display:block;
+    width:100%;
+}
 /* TOPUP */
 
 .topup-box{
